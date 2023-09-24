@@ -34,7 +34,7 @@ export const todoSlice = createSlice({
       },
       removeTodo:(state,action)=>{
         const filteredTodos = state.filter((todo)=>todo.id!==action.payload);
-        state.length=0;
+        state.length=0;       
         state.push(...filteredTodos);
       },
       handleEditSubmit:(state,action)=>{
