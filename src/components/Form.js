@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import { useDispatch } from 'react-redux';
 import { todoSlice } from '../redux/todoapp/reducers/todoSlice';
+import axios from 'axios';
 
 export const Form=({editFormVisibility, editTodo, setEditFormVisibility})=>{
 
@@ -10,13 +11,16 @@ export const Form=({editFormVisibility, editTodo, setEditFormVisibility})=>{
   // todo value state for normal add todo form
     const [todoValue, setTodoValue]=useState('');
 
+    
+
     // state for if someone changes the (to edit) value in update form
   const [editValue, setEditValue]=useState('');
 
   // useEffect is to show the (to edit) value in update form
-  useEffect(()=>{
-    setEditValue(editTodo.todo);
-  },[editTodo])
+   useEffect(()=>{
+ 
+     setEditValue(editTodo.todo);
+   },[editTodo])
 
    // normal add todo submit 
   const handleSubmit=(e)=>{
@@ -68,6 +72,10 @@ export const Form=({editFormVisibility, editTodo, setEditFormVisibility})=>{
           onClick={cancelUpdate}>BACK</button> */}
         </form>
       )}
+       <ul>
+      <li></li>
+      
+      </ul> 
     </>
       )
 }
